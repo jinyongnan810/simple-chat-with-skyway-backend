@@ -54,8 +54,8 @@ server.on("upgrade", (request, socket, head) => {
     });
   });
 });
-
-server.listen(5000, async () => {
-  console.log("Backend listening on port 5000.");
+const port = process.env.PORT || 5000;
+server.listen(port, async () => {
+  console.log(`Backend listening on port ${port}.`);
 });
 export { server };
