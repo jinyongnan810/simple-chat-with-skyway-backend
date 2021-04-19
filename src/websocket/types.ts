@@ -1,0 +1,9 @@
+export const CURRENT_USERS = "CURRENT_USERS";
+export const JOIN_ROOM = "JOIN_ROOM";
+export const EXIT_ROOM = "EXIT_ROOM";
+export const I_JOINED_ROOM = "I_JOINED_ROOM";
+export const I_EXITED_ROOM = "I_EXITED_ROOM";
+export const TRANSFER_OFFER = "TRANSFER_OFFER";
+export const TRANSFER_ANSWER = "TRANSFER_ANSWER";
+export const TRANSFER_CANDIDATE = "TRANSFER_CANDIDATE";
+export const ERROR = "ERROR";
