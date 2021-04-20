@@ -15,7 +15,7 @@ import { handleError } from "./middlewares/error-handler";
 
 const app = express();
 var corsOptions = {
-  origin: "http://localhost:4000",
+  origin: ["http://localhost:4000", "https://localhost:4000"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
