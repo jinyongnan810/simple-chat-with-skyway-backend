@@ -42,7 +42,7 @@ server.on("upgrade", (request, socket, head) => {
   cookieSesion({
     signed: false, // no encryption
     secure: false, //process.env.NODE_ENV === "production", // only https
-    sameSite: "none",
+    // sameSite: "none",
   })(request, socket, () => {
     extractUser(request);
     if (!request.currentUser) {
