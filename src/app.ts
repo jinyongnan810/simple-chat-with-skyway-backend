@@ -15,7 +15,12 @@ import { handleError } from "./middlewares/error-handler";
 
 const app = express();
 var corsOptions = {
-  origin: ["http://localhost:4000", "https://localhost:4000"],
+  origin: [
+    "http://localhost:4000",
+    "https://localhost:4000",
+    "https://fir-demo-55bb1.web.app",
+    "https://fir-demo-55bb1.firebaseapp.com",
+  ],
   credentials: true,
   optionsSuccessStatus: 200,
 };
