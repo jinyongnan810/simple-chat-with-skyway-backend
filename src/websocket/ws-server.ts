@@ -94,9 +94,9 @@ const broadcastClientsStatus = () => {
 const broadcastIJoinedRoom = (me: UserInfo, host: UserInfo) => {
   const msg = { type: types.I_JOINED_ROOM, data: { id: me.id } };
   sendToClient(host.ws, msg);
-  host.with
-    .filter((w) => w.id !== me.id)
-    .forEach((u) => sendToClient(u.ws, msg));
+  // host.with
+  //   .filter((w) => w.id !== me.id)
+  //   .forEach((u) => sendToClient(u.ws, msg));
 };
 const broadcastIExitedRoom = (me: UserInfo, host: UserInfo) => {
   const msg = { type: types.I_EXITED_ROOM, data: { id: me.id } };
