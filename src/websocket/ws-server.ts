@@ -111,7 +111,7 @@ const wss = new WebSocket.Server({ noServer: true });
 
 wss.on("connection", (ws, request: any) => {
   // accept the client
-  (ws as any).isAlive = true;
+  (ws as any).isAlive = 0;
   const id = request.currentUser.id;
   clients.set(id, {
     id,
@@ -206,7 +206,7 @@ wss.on("connection", (ws, request: any) => {
     }
   });
   ws.on("pong", () => {
-    (ws as any).isAlive = true;
+    (ws as any).isAlive = 0;
   });
   ws.on("close", () => {
     console.log(`${request.currentUser.id} closed`);
@@ -219,11 +219,11 @@ wss.on("connection", (ws, request: any) => {
 /* Timers */
 const checkAliveTimer: NodeJS.Timeout = setInterval(() => {
   clients.forEach((user: UserInfo, key: string, map: Map<string, UserInfo>) => {
-    if (!(user.ws as any).isAlive) {
+    if ((user.ws as any).isAlive === 3) {
       console.log("timeout");
       return user.ws.terminate();
     }
-    (user.ws as any).isAlive = false;
+    (user.ws as any).isAlive += 1;
     user.ws.ping("");
   });
 }, 2000);
