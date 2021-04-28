@@ -8,7 +8,7 @@ describe("index", () => {
 
   afterAll(() => {
     jest.clearAllMocks();
-    jest.resetModules();
+    // jest.resetModules();
   });
   it("jwt key not set", () => {
     try {

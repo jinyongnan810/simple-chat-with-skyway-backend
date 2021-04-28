@@ -40,9 +40,9 @@ const server = createServer(app);
 
 server.on("upgrade", (request, socket, head) => {
   cookieSesion({
-    signed: false, // no encryption
-    secure: true, //process.env.NODE_ENV === "production", // only https
-    sameSite: "none",
+    signed: false,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : undefined,
   })(request, socket, () => {
     extractUser(request);
     if (!request.currentUser) {

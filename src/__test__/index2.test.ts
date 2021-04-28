@@ -59,6 +59,7 @@ describe("index", () => {
     });
     console.log("hello6");
 
+    server.close();
     expect(cerMock.mock.calls.length).toEqual(1);
     expect(cerMock.mock.calls[0][0]).toEqual(errorMsg);
   });

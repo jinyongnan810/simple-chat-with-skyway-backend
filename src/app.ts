@@ -28,9 +28,9 @@ app.use(cors(corsOptions));
 app.set("trust proxy", true); //trust ingress nginx
 app.use(
   cookieSesion({
-    signed: false, // no encryption
-    secure: true, //process.env.NODE_ENV === "production", // only https
-    sameSite: "none",
+    signed: false,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : undefined,
   })
 );
 app.use(json());

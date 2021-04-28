@@ -311,8 +311,7 @@ describe("Websocket Server test", () => {
     expect(receivedJoinedRoomMsgUser1.length).toEqual(2);
     expect(receivedJoinedRoomMsgUser1[0].id).toEqual(id2);
     expect(receivedJoinedRoomMsgUser1[1].id).toEqual(id3);
-    expect(receivedJoinedRoomMsgUser2.length).toEqual(1);
-    expect(receivedJoinedRoomMsgUser2[0].id).toEqual(id3);
+    expect(receivedJoinedRoomMsgUser2.length).toEqual(0);
     expect(receivedJoinedRoomMsgUser3.length).toEqual(0);
 
     // exit room msg
@@ -563,8 +562,7 @@ describe("Websocket Server test", () => {
     expect(receivedJoinedRoomMsgUser1.length).toEqual(2);
     expect(receivedJoinedRoomMsgUser1[0].id).toEqual(id2);
     expect(receivedJoinedRoomMsgUser1[1].id).toEqual(id3);
-    expect(receivedJoinedRoomMsgUser2.length).toEqual(1);
-    expect(receivedJoinedRoomMsgUser2[0].id).toEqual(id3);
+    expect(receivedJoinedRoomMsgUser2.length).toEqual(0);
     expect(receivedJoinedRoomMsgUser3.length).toEqual(0);
 
     // exit room msg
